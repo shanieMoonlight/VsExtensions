@@ -1,0 +1,21 @@
+<Project>
+  <Target Name="GenerateAppSettingsFiles" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <AppSettingsGeneratorExe>$(MSBuildThisFileDirectory)../tools/AppSettingsGenerator.FileWatcher.dll</AppSettingsGeneratorExe>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <AppSettingsFiles Include="**\appsettings*.json" />
+    </ItemGroup>
+    
+    <Exec 
+      Command="dotnet &quot;$(AppSettingsGeneratorExe)&quot; generate &quot;%(AppSettingsFiles.FullPath)&quot; &quot;$(RootNamespace)&quot; &quot;$(ProjectDir)&quot;" 
+      WorkingDirectory="$(ProjectDir)"
+      Condition="Exists('%(AppSettingsFiles.FullPath)')" />
+    
+    <ItemGroup>
+      <Compile Include="**\AppSettingsDefinitions.cs" />
+      <Compile Include="**\AppSettingsAccessor.cs" />
+    </ItemGroup>
+  </Target>
+</Project>
