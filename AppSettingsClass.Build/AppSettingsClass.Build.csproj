@@ -1,26 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-	  <IsPackable>true</IsPackable>
-	  <PackageId>AppSettingsGenerator.Build</PackageId>
-	  <Version>1.0.0</Version>
-	  <Authors>Your Name</Authors>
-	  <Description>MSBuild integration for AppSettings generation.</Description>
-	  <DevelopmentDependency>true</DevelopmentDependency>
-	  <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
-  </PropertyGroup>
-	
-	
-  <ItemGroup>
-    <Content Include="build\**\*" PackagePath="build" />
-	  <Content Include="lib\netstandard2.0\**\*" PackagePath="lib\netstandard2.0" />
-  </ItemGroup>	
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IsPackable>true</IsPackable>
+		<PackageId>AppSettingsGenerator.Build</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Your Name</Authors>
+		<Description>MSBuild integration for AppSettings generation.</Description>
+		<DevelopmentDependency>true</DevelopmentDependency>
+		<BuildOutputTargetFolder>build</BuildOutputTargetFolder>
+		<!-- Add this line to include the assembly in lib folder -->
+		<IncludeBuildOutput>true</IncludeBuildOutput>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<Content Include="build\**\*" PackagePath="build" />
+	</ItemGroup>
 
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Build.Utilities.Core" PrivateAssets="All" />
 		<PackageReference Include="Serilog" />
+	</ItemGroup>
+
+	<!-- Add this to explicitly include your DLL in the lib folder -->
+	<ItemGroup>
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="lib\$(TargetFramework)" />
 	</ItemGroup>
 
 </Project>
