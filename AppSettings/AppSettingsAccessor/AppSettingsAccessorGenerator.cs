@@ -1,7 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace AppSettingsClass.Core.Generators;
+namespace AppSettingsAccessorGeneration;
 
 
 public class AppSettingsAccessorGenerator
@@ -41,6 +44,8 @@ public class AppSettingsAccessorGenerator
     private static StringBuilder HandleBeginClassFileAndReturnBuilder(string namespaceName)
     {
         var sb = new StringBuilder();
+        sb.AppendLine("#nullable enable");  // First line
+        sb.AppendLine();
         sb.AppendLine("using Microsoft.Extensions.Configuration;");
         sb.AppendLine("using Microsoft.Extensions.Logging;");
         sb.AppendLine();
@@ -50,6 +55,11 @@ public class AppSettingsAccessorGenerator
         sb.AppendLine();
         sb.AppendLine("public class AppSettingsAccessor(IConfiguration _config)");
         sb.AppendLine("{");
+        sb.AppendLine("");
+        sb.AppendLine($"{_tab}private readonly IConfiguration _configSection = _config;");
+        sb.AppendLine("");
+        sb.AppendLine($"{_tab}//---------------------------------//");
+        sb.AppendLine("");
 
         return sb;
     }
@@ -64,8 +74,8 @@ public class AppSettingsAccessorGenerator
         sb.AppendLine();
         sb.AppendLine($"{_tab}{_separator}");
         sb.AppendLine();
-        sb.AppendLine($"{_tab}public {className}Section {className} = new(_config);");
-        sb.AppendLine($"{_tab}public class {className}Section(IConfiguration _config)");
+        sb.AppendLine($"{_tab}public {className}Accessor {className} = new(_config);");
+        sb.AppendLine($"{_tab}public class {className}Accessor(IConfiguration _config)");
         sb.AppendLine($"{_tab}{{");
     }
 
@@ -73,7 +83,7 @@ public class AppSettingsAccessorGenerator
 
     private static void HandleClassEnding(Stack<string> classStack, StringBuilder sb)
     {
-        if (classStack.Count <= 0)        
+        if (classStack.Count <= 0)
             return;
 
         var className = classStack.Pop();
@@ -85,7 +95,12 @@ public class AppSettingsAccessorGenerator
 
     private static void HandleSectionName(Stack<string> classStack, StringBuilder sb)
     {
-        sb.AppendLine($"{_tab}{_tab}private readonly IConfigurationSection _configSection = _config.GetSection(AppSettingsDefinitions.{string.Join(".", classStack.Reverse())}.Name);");
+
+        var sectionNameParts = classStack.Reverse()
+            .Where(x => !string.IsNullOrWhiteSpace(x));
+        var sectionName = string.Join(".", sectionNameParts);
+
+        sb.AppendLine($"{_tab}{_tab}private readonly IConfigurationSection _configSection = _config.GetSection(AppSettingsDefinitions.{sectionName}.Name);");
         sb.AppendLine();
     }
 
@@ -101,7 +116,7 @@ public class AppSettingsAccessorGenerator
             typeLine = lines[currentIdx].Trim();
         }
 
-        if(string.IsNullOrWhiteSpace(typeLine))
+        if (string.IsNullOrWhiteSpace(typeLine))
             return currentIdx;
 
         if (typeLine.StartsWith("public static Type") && typeLine.Contains(keyName.Replace("Key", "Type")))
@@ -109,7 +124,14 @@ public class AppSettingsAccessorGenerator
             var returnType = GetTypeValue(typeLine);
             var methodName = keyName.Replace("Key", string.Empty);
             sb.AppendLine($"{_tab}{_tab}public {returnType} Get{methodName}() =>");
-            sb.AppendLine($"{_tab}{_tab}{_tab}_configSection.GetSection(AppSettingsDefinitions.{string.Join(".", classStack.Reverse())}.{keyName})");
+
+
+            var sectionNameParts = new List<string> { "AppSettingsDefinitions", string.Join(".", classStack.Reverse()), keyName }
+                .Where(x => !string.IsNullOrWhiteSpace(x));
+            var sectionName = string.Join(".", sectionNameParts);
+
+
+            sb.AppendLine($"{_tab}{_tab}{_tab}_configSection.GetSection({sectionName})");
             sb.AppendLine($"{_tab}{_tab}{_tab}.Get<{returnType}?>() ?? {GetDefaultValue(returnType)};");
             sb.AppendLine();
         }
