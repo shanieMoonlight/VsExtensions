@@ -1,6 +1,6 @@
-# AppSettingsAccessors
+# StronglyTypedAppSettings
 
-AppSettingsAccessors is a .NET library designed to simplify the access and management of application settings defined in `appsettings.json` files. 
+StronglyTypedAppSettings is a .NET library designed to simplify the access and management of application settings defined in `appsettings.json` files. 
 It leverages source generators to create strongly-typed accessors for configuration sections, making it easier to work with configuration data in a type-safe manner.
 
 ## Features
@@ -12,7 +12,7 @@ It leverages source generators to create strongly-typed accessors for configurat
 
 ## Installation
 
-To use AppSettingsAccessors in your project, add a project reference to `AppSettingsAccessors.csproj` in your `.csproj` file:
+To use StronglyTypedAppSettings in your project, add a project reference to `StronglyTypedAppSettings.csproj` in your `.csproj` file:
 
        <ItemGroup>
 		<PackageReference Include="StronglyTypedAppSettings" Version="1.0.3" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -60,13 +60,13 @@ Ensure your `appsettings.json` file is included in the project:
 
 #### Configuration Classes
 
-For convenience extend the `AppSettingsAccessors.AppSettingsAccessor` class to create a class that contains all the configuration data for your app. 
+For convenience extend the `StronglyTypedAppSettings.AppSettingsAccessor` class to create a class that contains all the configuration data for your app. 
 This is not required but it is a good idea to do so.
 
     /// <summary>
     /// Class with config data for this app
     /// </summary>
-    public class StartupData(IConfiguration config) : AppSettingsAccessors.AppSettingsAccessor(config)
+    public class StartupData(IConfiguration config) : StronglyTypedAppSettings.AppSettingsAccessor(config)
     {
         /// <summary>
         /// Name of this application
