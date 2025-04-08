@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppSettings", "AppSettings", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@Testers", "@Testers", "{7381D182-29A1-4BC3-8FA8-F8F3F9A9B4D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publishing", "Publishing", "{A0667F1E-9BF8-40F3-9A1D-BA4C9025C988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSettingsAccessor.Tester", "@Testers\AppSettingsAccessor.Tester\AppSettingsAccessor.Tester.csproj", "{D22A4CD8-4119-237D-87A4-BF74FD777365}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{1EB2F3DB-1F8F-4BD5-919C-76AEE2CCEC05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{7D2D47F0-162F-430A-9F7D-1E4E882E7511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Json", "Libs\Newtonsoft.Json\Newtonsoft.Json.csproj", "{1CDA724B-AC47-F118-3D07-6889AA8A26DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppSettings", "AppSettings", "{A22CE684-8EE3-4CF6-AF75-9D62ACC78F2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StronglyTypedAppSettings", "StronglyTypedAppSettings", "{FCF6785B-BAD7-453C-80BB-B796717446FE}"
+	ProjectSection(SolutionItems) = preProject
+		Publishing\AppSettings\StronglyTypedAppSettings\publish-nuget.ps1 = Publishing\AppSettings\StronglyTypedAppSettings\publish-nuget.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StronglyTypedAppSettings", "Apps\AppSettings\StronglyTypedAppSettings\StronglyTypedAppSettings.csproj", "{3FB2F902-D005-4751-897E-F2EC922BB6D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D22A4CD8-4119-237D-87A4-BF74FD777365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22A4CD8-4119-237D-87A4-BF74FD777365}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22A4CD8-4119-237D-87A4-BF74FD777365}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22A4CD8-4119-237D-87A4-BF74FD777365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDA724B-AC47-F118-3D07-6889AA8A26DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDA724B-AC47-F118-3D07-6889AA8A26DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDA724B-AC47-F118-3D07-6889AA8A26DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDA724B-AC47-F118-3D07-6889AA8A26DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB2F902-D005-4751-897E-F2EC922BB6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB2F902-D005-4751-897E-F2EC922BB6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB2F902-D005-4751-897E-F2EC922BB6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB2F902-D005-4751-897E-F2EC922BB6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {1EB2F3DB-1F8F-4BD5-919C-76AEE2CCEC05}
+		{D22A4CD8-4119-237D-87A4-BF74FD777365} = {7381D182-29A1-4BC3-8FA8-F8F3F9A9B4D6}
+		{1CDA724B-AC47-F118-3D07-6889AA8A26DA} = {7D2D47F0-162F-430A-9F7D-1E4E882E7511}
+		{A22CE684-8EE3-4CF6-AF75-9D62ACC78F2C} = {A0667F1E-9BF8-40F3-9A1D-BA4C9025C988}
+		{FCF6785B-BAD7-453C-80BB-B796717446FE} = {A22CE684-8EE3-4CF6-AF75-9D62ACC78F2C}
+		{3FB2F902-D005-4751-897E-F2EC922BB6D5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE01CABB-7B6F-40AF-B916-06A938287BB2}
+	EndGlobalSection
+EndGlobal

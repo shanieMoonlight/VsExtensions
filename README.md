@@ -1,6 +1,7 @@
 # AppSettingsAccessors
 
-AppSettingsAccessors is a .NET library designed to simplify the access and management of application settings defined in `appsettings.json` files. It leverages source generators to create strongly-typed accessors for configuration sections, making it easier to work with configuration data in a type-safe manner.
+AppSettingsAccessors is a .NET library designed to simplify the access and management of application settings defined in `appsettings.json` files. 
+It leverages source generators to create strongly-typed accessors for configuration sections, making it easier to work with configuration data in a type-safe manner.
 
 ## Features
 
@@ -16,6 +17,12 @@ To use AppSettingsAccessors in your project, add a project reference to `AppSett
        <ItemGroup>
         <ProjectReference Include="..\AppSettings\AppSettingsAccessor\AppSettingsAccessors.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
       </ItemGroup>
+
+
+# This part is very important:
+
+    OutputItemType="Analyzer" ReferenceOutputAssembly="false"
+
 
 Ensure your `appsettings.json` file is included in the project:
      

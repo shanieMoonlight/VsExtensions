@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+	  <GenerateProgramFile>false</GenerateProgramFile>
+	  <LangVersion>latest</LangVersion>
+
+
+	  <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+
+	  <!-- Make sure this is a class library -->
+	  <OutputType>Library</OutputType>
+
+	  <!-- Enable the source generator to be packaged as part of the build -->
+	  <IsRoslynSourceGenerator>true</IsRoslynSourceGenerator>
+	  
+	  
+	  
+	  
+	  
+  </PropertyGroup>
+
+	
+	
+	
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" PrivateAssets="all" Version="4.13.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\Newtonsoft.Json\Newtonsoft.Json.csproj" />
+  </ItemGroup>
+
+
+	
+	<!-- https://github.com/dotnet/roslyn/discussions/47517-->
+	<PropertyGroup>
+		<GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
+	</PropertyGroup>
+	
+	<Target Name="GetDependencyTargetPaths">
+		<ItemGroup>
+            <TargetPathWithTargetPlatformMoniker Include="$(UserProfile)\source\repos\VsTools\Libs\Newtonsoft.Json\bin\Release\netstandard2.0\Newtonsoft.Json.dll" IncludeRuntimeDependency="false" />
+		</ItemGroup>
+	</Target>
+	
+	
+
+
+</Project>
