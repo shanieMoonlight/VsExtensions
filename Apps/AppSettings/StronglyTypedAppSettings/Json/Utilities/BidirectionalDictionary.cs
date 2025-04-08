@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
     internal class BidirectionalDictionary<TFirst, TSecond>
         where TFirst : notnull

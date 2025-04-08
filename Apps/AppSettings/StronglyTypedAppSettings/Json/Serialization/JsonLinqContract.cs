@@ -25,9 +25,9 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
-namespace Newtonsoft.Json.Serialization
+namespace StronglyTyped.Newtonsoft.Json.Serialization
 {
     /// <summary>
     /// Contract details for a <see cref="Type"/> used by the <see cref="JsonSerializer"/>.

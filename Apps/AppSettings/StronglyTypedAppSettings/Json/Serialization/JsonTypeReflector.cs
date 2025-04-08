@@ -32,18 +32,18 @@ using System.Security;
 #if HAVE_CAS
 using System.Security.Permissions;
 #endif
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
 
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
 using System.Runtime.Serialization;
 
-namespace Newtonsoft.Json.Serialization
+namespace StronglyTyped.Newtonsoft.Json.Serialization
 {
     internal static class JsonTypeReflector
     {

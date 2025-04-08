@@ -26,7 +26,7 @@
 using System;
 using System.Threading;
 
-namespace Newtonsoft.Json
+namespace StronglyTyped.Newtonsoft.Json
 {
     /// <summary>
     /// The default JSON name table implementation.

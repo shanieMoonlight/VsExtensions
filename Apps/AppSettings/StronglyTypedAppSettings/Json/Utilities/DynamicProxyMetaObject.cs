@@ -31,7 +31,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
     [RequiresUnreferencedCode(MiscellaneousUtils.TrimWarning)]
     [RequiresDynamicCode(MiscellaneousUtils.AotWarning)]

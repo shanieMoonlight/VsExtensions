@@ -30,7 +30,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Newtonsoft.Json.Linq
+namespace StronglyTyped.Newtonsoft.Json.Linq
 {
     public partial class JRaw
     {

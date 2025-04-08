@@ -26,11 +26,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Linq;
+using StronglyTyped.Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
@@ -38,7 +38,7 @@ using System.Linq;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Schema
+namespace StronglyTyped.Newtonsoft.Json.Schema
 {
     [Obsolete("JSON Schema validation has been moved to its own package. See https://www.newtonsoft.com/jsonschema for more details.")]
     internal class JsonSchemaWriter

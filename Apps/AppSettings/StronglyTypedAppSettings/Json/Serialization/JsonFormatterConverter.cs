@@ -28,10 +28,10 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Linq;
+using StronglyTyped.Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Linq;
 
-namespace Newtonsoft.Json.Serialization
+namespace StronglyTyped.Newtonsoft.Json.Serialization
 {
 #pragma warning disable SYSLIB0050
     [RequiresUnreferencedCode(MiscellaneousUtils.TrimWarning)]

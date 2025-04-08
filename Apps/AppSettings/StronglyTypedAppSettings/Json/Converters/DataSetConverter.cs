@@ -27,10 +27,10 @@
 using System;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
-namespace Newtonsoft.Json.Converters
+namespace StronglyTyped.Newtonsoft.Json.Converters
 {
     /// <summary>
     /// Converts a <see cref="DataSet"/> to and from JSON.

@@ -28,14 +28,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #endif
 using System.Reflection;
 using System.Reflection.Emit;
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
     internal class DynamicReflectionDelegateFactory : ReflectionDelegateFactory
     {

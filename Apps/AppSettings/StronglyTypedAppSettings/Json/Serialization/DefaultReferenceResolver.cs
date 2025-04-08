@@ -24,10 +24,10 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Serialization
+namespace StronglyTyped.Newtonsoft.Json.Serialization
 {
     internal class DefaultReferenceResolver : IReferenceResolver
     {

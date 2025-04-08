@@ -27,13 +27,13 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Reflection;
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #endif
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
     internal abstract class ReflectionDelegateFactory
     {

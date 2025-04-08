@@ -27,11 +27,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 using System.IO;
 using System.Globalization;
 
-namespace Newtonsoft.Json.Linq
+namespace StronglyTyped.Newtonsoft.Json.Linq
 {
     /// <summary>
     /// Represents a JSON array.

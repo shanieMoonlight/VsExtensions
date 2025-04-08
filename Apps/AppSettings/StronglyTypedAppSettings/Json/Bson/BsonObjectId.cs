@@ -24,11 +24,11 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Bson
+namespace StronglyTyped.Newtonsoft.Json.Bson
 {
     /// <summary>
     /// Represents a BSON Oid (object id).

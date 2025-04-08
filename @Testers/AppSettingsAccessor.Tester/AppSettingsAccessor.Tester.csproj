@@ -8,14 +8,6 @@
 	
 
 	<ItemGroup>
-		<!--
-		<PackageReference Include="AppSettingsAccessors" Version="1.0.1"  OutputItemType="Analyzer" ReferenceOutputAssembly="false" >
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		-->
-		<!--<PackageReference Include="StronglyTypedAppSettings" Version="1.0.0"  OutputItemType="Analyzer"   ReferenceOutputAssembly="false" />-->
-		<!--<PackageReference Include="StronglyTypedAppSettings" Version="1.0.2" OutputItemType="Analyzer"   ReferenceOutputAssembly="false"/>-->
 		<PackageReference Include="StronglyTypedAppSettings" Version="1.0.5" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	</ItemGroup>
@@ -32,6 +24,17 @@
 	  <ProjectReference Include="..\..\Apps\AppSettings\StronglyTypedAppSettings\StronglyTypedAppSettings.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 	</ItemGroup>-->
 
+
+
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>StronglyTypedAppSettings.Tests</_Parameter1>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>DynamicProxyGenAssembly2</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 	
 
 </Project>

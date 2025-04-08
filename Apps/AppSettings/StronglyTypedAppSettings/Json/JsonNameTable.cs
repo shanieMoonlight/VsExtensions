@@ -1,4 +1,4 @@
-﻿namespace Newtonsoft.Json
+﻿namespace StronglyTyped.Newtonsoft.Json
 {
     /// <summary>
     /// Base class for a table of atomized string objects.

@@ -31,16 +31,16 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Reflection;
 using System.Runtime.Serialization;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
 #endif
 
-namespace Newtonsoft.Json.Converters
+namespace StronglyTyped.Newtonsoft.Json.Converters
 {
     /// <summary>
     /// Converts an <see cref="Enum"/> to and from its name string value.

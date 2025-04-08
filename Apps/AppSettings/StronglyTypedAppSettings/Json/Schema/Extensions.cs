@@ -26,12 +26,12 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Linq;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Schema
+namespace StronglyTyped.Newtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

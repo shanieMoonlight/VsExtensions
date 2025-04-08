@@ -30,11 +30,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
     internal class FSharpFunction
     {

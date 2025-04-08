@@ -27,11 +27,11 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Bson
+namespace StronglyTyped.Newtonsoft.Json.Bson
 {
     internal class BsonBinaryWriter
     {

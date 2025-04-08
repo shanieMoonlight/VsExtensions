@@ -26,13 +26,13 @@
 using System;
 using System.Collections.Generic;
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 #endif
 using System.Reflection;
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
 #if PORTABLE
     internal static class MethodBinder

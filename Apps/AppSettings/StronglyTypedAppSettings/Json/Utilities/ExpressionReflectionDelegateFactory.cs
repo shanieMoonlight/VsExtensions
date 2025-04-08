@@ -32,9 +32,9 @@ using System.Text;
 using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 
-namespace Newtonsoft.Json.Utilities
+namespace StronglyTyped.Newtonsoft.Json.Utilities
 {
     internal class ExpressionReflectionDelegateFactory : ReflectionDelegateFactory
     {

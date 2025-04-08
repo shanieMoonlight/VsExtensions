@@ -27,13 +27,13 @@ using System;
 using System.Globalization;
 using System.ComponentModel;
 using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Utilities;
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Linq;
+using StronglyTyped.Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 using System.Diagnostics.CodeAnalysis;
 
 #if !HAVE_LINQ
-using Newtonsoft.Json.Utilities.LinqBridge;
+using StronglyTyped.Newtonsoft.Json.Utilities.LinqBridge;
 #else
 using System.Linq;
 
@@ -41,7 +41,7 @@ using System.Linq;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Schema
+namespace StronglyTyped.Newtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

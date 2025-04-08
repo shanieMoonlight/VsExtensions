@@ -30,7 +30,7 @@ using System.IO;
 using System.Numerics;
 #endif
 
-namespace Newtonsoft.Json.Serialization
+namespace StronglyTyped.Newtonsoft.Json.Serialization
 {
     internal class TraceJsonWriter : JsonWriter
     {

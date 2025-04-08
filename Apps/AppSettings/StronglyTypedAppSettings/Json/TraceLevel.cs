@@ -1,8 +1,8 @@
 ﻿
 #if !HAVE_TRACE_WRITER
-using Newtonsoft.Json.Serialization;
+using StronglyTyped.Newtonsoft.Json.Serialization;
 
-namespace Newtonsoft.Json
+namespace StronglyTyped.Newtonsoft.Json
 {
     /// <summary>
     /// Specifies what messages to output for the <see cref="ITraceWriter"/> class.

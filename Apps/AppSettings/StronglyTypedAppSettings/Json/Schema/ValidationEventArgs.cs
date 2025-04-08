@@ -24,11 +24,11 @@
 #endregion
 
 using System;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
 #nullable disable
 
-namespace Newtonsoft.Json.Schema
+namespace StronglyTyped.Newtonsoft.Json.Schema
 {
     /// <summary>
     /// <para>

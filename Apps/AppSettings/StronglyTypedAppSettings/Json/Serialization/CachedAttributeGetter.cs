@@ -26,9 +26,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using Newtonsoft.Json.Utilities;
+using StronglyTyped.Newtonsoft.Json.Utilities;
 
-namespace Newtonsoft.Json.Serialization
+namespace StronglyTyped.Newtonsoft.Json.Serialization
 {
     [RequiresUnreferencedCode(MiscellaneousUtils.TrimWarning)]
     [RequiresDynamicCode(MiscellaneousUtils.AotWarning)]
