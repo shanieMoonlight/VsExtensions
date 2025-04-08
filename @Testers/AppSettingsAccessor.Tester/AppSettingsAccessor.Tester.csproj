@@ -16,7 +16,7 @@
 		-->
 		<!--<PackageReference Include="StronglyTypedAppSettings" Version="1.0.0"  OutputItemType="Analyzer"   ReferenceOutputAssembly="false" />-->
 		<!--<PackageReference Include="StronglyTypedAppSettings" Version="1.0.2" OutputItemType="Analyzer"   ReferenceOutputAssembly="false"/>-->
-		<PackageReference Include="StronglyTypedAppSettings" Version="1.0.3" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+		<PackageReference Include="StronglyTypedAppSettings" Version="1.0.5" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	</ItemGroup>
 	

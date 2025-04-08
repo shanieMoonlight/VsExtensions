@@ -7,9 +7,9 @@ using System.Text;
 namespace StronglyTypedAppSettings;
 
 
-///// <summary>
-///// Provides functionality to generate strongly-typed class definitions for application settings based on JSON content.
-///// </summary>
+/// <summary>
+/// Provides functionality to generate strongly-typed class definitions for application settings based on JSON content.
+/// </summary>
 public class AppSettingsDefinitionsGenerator
 {
     private const string _divider = "    //- - - - - - - - - - - - - - - -//        ";
@@ -29,10 +29,11 @@ public class AppSettingsDefinitionsGenerator
         var sb = new StringBuilder();
         sb.AppendLine("#nullable enable");  // First line
         sb.AppendLine();
+        sb.AppendLine($"//{debugMsg}");
+        sb.AppendLine();
         sb.AppendLine("using Microsoft.Extensions.Logging;");
         sb.AppendLine();
         sb.AppendLine();
-        sb.AppendLine($"//{debugMsg}");
         sb.AppendLine($"namespace {namespaceName};");
         sb.AppendLine();
         sb.AppendLine();

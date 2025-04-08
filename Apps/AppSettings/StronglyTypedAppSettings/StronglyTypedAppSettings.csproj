@@ -13,16 +13,19 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>StronglyTypedAppSettings</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.5</Version>
     <Authors>ShanieMoonlight</Authors>
     <Description>A source generator for strongly-typed access to appsettings.json.</Description>
     <PackageTags>source-generator;appsettings;configuration</PackageTags>
     <RepositoryUrl>https://github.com/YourRepo/StronglyTypedAppSettings</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/YourRepo/StronglyTypedAppSettings</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/shanieMoonlight/VsExtensions/tree/master</PackageProjectUrl>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <PrivateAssets>all</PrivateAssets>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>Strongly Typed AppSettings</Title>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -89,6 +92,16 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
 		<PackageReference Include="System.Runtime.Serialization.Formatters" Version="$(SystemRuntimeSerializationFormattersPackageVersion)" />
 		<PackageReference Include="System.Xml.XmlDocument" Version="$(SystemXmlXmlDocumentPackageVersion)" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 	<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
 		<AssemblyTitle>Json.NET .NET Standard 1.3</AssemblyTitle>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
+using System;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -39,25 +40,72 @@ public class AppSettingsAccessorsGenerator : IIncrementalGenerator
     /// </remarks>
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        // Find the additional file (appsettings.json)
+        // Access MSBuild properties via AnalyzerConfigOptionsProvider
+        var versionProvider = context.AnalyzerConfigOptionsProvider
+            .Select((options, _) =>
+            {
+                options.GlobalOptions.TryGetValue("build_property.Version", out var version);
+                return version;
+            });
+
+
+        // Combine the version with the additional files processing
+        context.RegisterSourceOutput(versionProvider, (spc, version) =>
+        {
+            if (!string.IsNullOrEmpty(version))
+            {
+                spc.ReportDiagnostic(Diagnostic.Create(
+                    new DiagnosticDescriptor(
+                        "GEN001",
+                        "Project Version",
+                        $"Project version is {version}",
+                        "Generator",
+                        DiagnosticSeverity.Info,
+                        isEnabledByDefault: true),
+                    Location.None));
+            }
+        });
+
+
         var additionalFiles = context.AdditionalTextsProvider
             .Where(file => file.Path.Trim().ToLowerInvariant().EndsWith(_appsettingsFileName));
 
-        // Register a source output that generates the HelloWorld class
-        context.RegisterSourceOutput(additionalFiles, (spc, text) =>
+        // Find the additional file (appsettings.json)
+        var combinedProvider = additionalFiles
+            .Combine(versionProvider);
+
+        context.RegisterSourceOutput(combinedProvider, (spc, combined) =>
         {
-            if (IsMainAppsettingsFile(text))
+            var (file, version) = combined;
+
+            if (IsMainAppsettingsFile(file))
             {
-                var appSettingsJsonSourceText = text.GetText();
+                var appSettingsJsonSourceText = file.GetText();
                 var appSettingsJsonText = appSettingsJsonSourceText.ToString();
 
-                var defsClass = AppSettingsDefinitionsGenerator.GenerateDefinitionsClass(appSettingsJsonText, _nameSpace);
-                var accessorClass = AppSettingsAccessorGenerator.GenerateAccessorClass(defsClass, _nameSpace);
+                var defsClass = AppSettingsDefinitionsGenerator.GenerateDefinitionsClass(appSettingsJsonText, _nameSpace, VersionProvider.Version);
+                var accessorClass = AppSettingsAccessorGenerator.GenerateAccessorClass(defsClass, _nameSpace, VersionProvider.Version);
 
                 spc.AddSource("AppSettingsDefinitions.cs", SourceText.From(defsClass, Encoding.UTF8));
                 spc.AddSource("AppSettingsAccessor.cs", SourceText.From(accessorClass, Encoding.UTF8));
             }
         });
+
+        //// Register a source output that generates the strongly-typed classes
+        //context.RegisterSourceOutput(additionalFiles, (spc, text) =>
+        //{
+        //    if (IsMainAppsettingsFile(text))
+        //    {
+        //        var appSettingsJsonSourceText = text.GetText();
+        //        var appSettingsJsonText = appSettingsJsonSourceText.ToString();
+
+        //        var defsClass = AppSettingsDefinitionsGenerator.GenerateDefinitionsClass(appSettingsJsonText, _nameSpace, version);
+        //        var accessorClass = AppSettingsAccessorGenerator.GenerateAccessorClass(defsClass, _nameSpace);
+
+        //        spc.AddSource("AppSettingsDefinitions.cs", SourceText.From(defsClass, Encoding.UTF8));
+        //        spc.AddSource("AppSettingsAccessor.cs", SourceText.From(accessorClass, Encoding.UTF8));
+        //    }
+        //});
     }
 
     //---------------------------------//

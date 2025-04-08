@@ -361,4 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Apps/AppSettings/StronglyTypedAppSettings/secrets.txt
+# Ignore all files named secrets in any location or with any extension  
+**/secrets.*
