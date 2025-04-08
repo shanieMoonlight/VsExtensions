@@ -10,7 +10,7 @@ param(
     [bool]$PushToNuGet = $true,
     
     [Parameter(Mandatory=$false)]
-    [string]$ProjectPath = "../../AppSettingsAccessor/AppSettingsAccessors.csproj"
+    [string]$ProjectPath = "../../../Apps/AppSettings/StronglyTypedAppSettings/StronglyTypedAppSettings.csproj"
 )
 
 # Set working directory to the script location

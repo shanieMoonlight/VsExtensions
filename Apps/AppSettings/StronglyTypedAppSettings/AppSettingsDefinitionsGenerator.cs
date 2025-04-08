@@ -7,10 +7,20 @@ using System.Text;
 namespace StronglyTypedAppSettings;
 
 
+///// <summary>
+///// Provides functionality to generate strongly-typed class definitions for application settings based on JSON content.
+///// </summary>
 public class AppSettingsDefinitionsGenerator
 {
     private const string _divider = "    //- - - - - - - - - - - - - - - -//        ";
 
+    /// <summary>
+    /// Generates a strongly-typed class definition for application settings based on the provided JSON content.
+    /// </summary>
+    /// <param name="jsonContent">The JSON content representing the application settings.</param>
+    /// <param name="namespaceName">The namespace to use for the generated class.</param>
+    /// <param name="debugMsg">An optional debug message to include in the generated class.</param>
+    /// <returns>A string containing the generated class definition.</returns>
     public static string GenerateDefinitionsClass(string jsonContent, string namespaceName, string debugMsg = null)
     {
         // Remove commented-out lines
