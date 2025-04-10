@@ -21,8 +21,8 @@ namespace StronglyTypedAppSettings;
 [Generator]
 public class AppSettingsAccessorsGenerator : IIncrementalGenerator
 {
-    private const string _nameSpace = "AppSettingsAccessors";
-    private const string _appsettingsFileName = "appsettings.json";
+    private const string _nameSpace = StasConstants.GENERATED_NAMESPACE;
+    private const string _appsettingsFileName = StasConstants.APPSETTINGS_FILENAME;
 
     /// <summary>
     /// Initializes the source generator by registering the necessary steps to process the appsettings.json file
